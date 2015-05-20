@@ -1,26 +1,19 @@
+
 <div class="login-content"> 
            
                <!-- Login -->
         <div class="lc-block toggled" id="l-login">
-           
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="md md-person"></i></span>
                 <div class="fg-line">
-                    <input type="text" class="form-control" placeholder="Username">
-                </div>
-            </div>
-            
-            <div class="input-group m-b-20">
-                <span class="input-group-addon"><i class="md md-mail"></i></span>
-                <div class="fg-line">
-                    <input type="text" class="form-control" placeholder="Email Address">
+                    <input type="text" class="form-control" placeholder="Usuario">
                 </div>
             </div>
             
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="md md-accessibility"></i></span>
                 <div class="fg-line">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Contraseña">
                 </div>
             </div>
             
@@ -30,18 +23,16 @@
                 <label>
                     <input type="checkbox" value="">
                     <i class="input-helper"></i>
-                    Accept the license agreement
+                    Recuerdame
                 </label>
             </div>
             
-            <a href="" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></a>
+            <a ui-sref="app.main" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></a>
             
             <ul class="login-navigation">
-                <li ui-sref="login" class="bgm-green">Login</li>
-                <li ui-sref="forgot" class="bgm-orange">Forgot Password?</li>
+                <li ui-sref="register" class="bgm-red">Registrarse</li>
+                <li ui-sref="forgot" class="bgm-orange">Olvide mi contraseña?</li>
             </ul>
-           
         </div>
-
 </div>
-
+        
