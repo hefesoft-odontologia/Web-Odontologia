@@ -5,7 +5,7 @@ angular
       $httpProvider.defaults.withCredentials = true;
       $httpProvider.interceptors.push('authInterceptorService');
 
-  		$urlRouterProvider.otherwise('/404');
+  		$urlRouterProvider.otherwise('/login');
 
   		$stateProvider
 
