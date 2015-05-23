@@ -1,0 +1,169 @@
+<div class="container" ng-controller="pacientesController as vm">
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Datos Pacientes <small></small></h2>
+        </div>
+        
+        <div class="card-body card-padding">
+             <p class="c-black f-500">Por favor digite la informacion del paciente</p>       
+        
+             <div class="form-group">
+                <div class="fg-line">
+                    <input type="text" class="form-control input-sm" placeholder="Nombres y apellidos" ng-model="Paciente.nombre">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="fg-line">
+                    <input type="text" class="form-control input-sm" placeholder="Numero de identificacion" ng-model="Paciente.cedula">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="fg-line">
+                    <input type="text" class="form-control input-sm" placeholder="Email" ng-model="Paciente.email">
+                </div>
+            </div>
+
+            
+            <div class="row">   
+
+                   <div class="col-sm-4">
+                      <div class="form-group">
+                          <div class="fg-line">
+                              <input type="text" class="form-control" placeholder="Ciudad" ng-model="Paciente.ciudad">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="form-group">
+                          <div class="fg-line">
+                              <input type="text" class="form-control" placeholder="Municipio" ng-model="Paciente.municipio">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-4">                      
+                      <div class="input-group form-group">
+                          <span class="input-group-addon">
+                              <i class="md md-event"></i>
+                          </span>
+
+                              <div class="dtp-container dropdown fg-line open">
+                              
+                              <input type="text"
+                                ng-model="Paciente.fecha" 
+                                class="form-control date-time-picker" 
+                                data-toggle="dropdown" 
+                                placeholder="Fecha de nacimiento" 
+                                aria-expanded="true">
+                              
+                              <div class="dropdown-backdrop"></div>
+                          </div>
+                      </div>
+                  </div>
+
+
+
+                   <div class="col-sm-4">
+                      <div class="form-group">
+                          <div class="fg-line">
+                              <input type="text" class="form-control" placeholder="Edad" ng-model="Paciente.edad">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="form-group">
+                          <div class="fg-line">
+                              <input type="text" class="form-control" placeholder="Telefono" ng-model="Paciente.telefono">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="form-group">
+                          <div class="fg-line">
+                              <input type="text" class="form-control" placeholder="Eps" ng-model="Paciente.eps">
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                      <div class="form-group">
+                          <div class="fg-line">
+                              <input type="text" class="form-control" placeholder="Ips" ng-model="Paciente.ips">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="form-group">
+                          <div class="fg-line">
+                              <input type="text" class="form-control" placeholder="Ars" ng-model="Paciente.ars">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="form-group">
+                          <div class="fg-line">
+                              <input type="text" class="form-control" placeholder="Regimen especial" ng-model="Paciente.regimenespecial">
+                          </div>
+                      </div>
+                  </div>
+                                
+                               
+              </div>
+
+            
+           
+        </div>
+    </div>
+
+    <div class="card">
+     <div class="card-header">
+      <h2>Observaciones <small>Por favor suministre informacion adicinal del paciente de ser necesario</small></h2>
+    </div>
+
+    <div class="card-body card-padding">
+             
+      <div class="form-group">
+          <div class="fg-line">
+              <textarea class="form-control" rows="5" placeholder="Medico particular" ng-model="Paciente.medicoparticular"></textarea>
+          </div>
+      </div>
+      
+                  
+      <div class="form-group">
+          <div class="fg-line">
+              <textarea 
+              class="form-control auto-size" placeholder="Observaciones" 
+              style="overflow: hidden; word-wrap: break-word; height: 32px;"
+              ng-model="Paciente.observaciones"
+              ></textarea>
+          </div>
+      </div>           
+    </div>
+    
+</div>
+
+
+
+
+
+ <button ng-click="addPaciente()" class="btn btn-info btn-sm waves-effect waves-button waves-float">Guardar</button>
+
+
+
+<!--
+<form name="form" ng-submit="addPaciente()">
+      <div class="list">
+        
+        <label ng-disabled="form.nombres.$dirty && form.nombres.$invalid"
+                  ng-click="cargarImagen(item)" class="item item-input">
+          <span class="input-label">Imagen</span>
+          <img style="width: 80px;" ng-src="{{Imagen}}">          
+        </label>
+        
+        
+      </div>
+</form>
+
+-->

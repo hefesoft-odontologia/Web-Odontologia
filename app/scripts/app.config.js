@@ -1,8 +1,11 @@
 angular
-  .module('odontologiaApp').config(['$stateProvider', '$urlRouterProvider', 
-  	function ($stateProvider, $urlRouterProvider) {
+  .module('odontologiaApp').config(['$stateProvider', '$urlRouterProvider', '$httpProvider',
+  	function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
-  		$urlRouterProvider.otherwise('/login');
+      $httpProvider.defaults.withCredentials = true;
+      $httpProvider.interceptors.push('authInterceptorService');
+
+  		$urlRouterProvider.otherwise('/404');
 
   		$stateProvider
 
@@ -30,6 +33,34 @@ angular
       })
 
 
+      /************************* Pacientes *******************************/
+
+      .state('app.listadoPacientes', {
+        url: "/listadoPacientes",
+        cache: false,
+        views: {
+            'menuContent': {
+                templateUrl: "/views/pacientes/listado.html"
+            }       
+            }
+      })
+
+      .state('app.paciente', {
+        url: "/paciente",
+        cache: false,
+        views: {
+            'menuContent': {
+                templateUrl: "/views/pacientes/paciente.html"
+            }       
+            }
+      })
+
+      
+
+
+      /*****************************************************/
+
+
       /******************** Auth *******************/
       .state('register', {
         url: "/register",
@@ -41,6 +72,12 @@ angular
         url: "/login",
         cache: false,
         templateUrl : "/views/register/login.html"
+      })
+
+      .state('404', {
+        url: "/404",
+        cache: false,
+        templateUrl : "/views/404/404.html"
       })
 
       .state('forgot', {

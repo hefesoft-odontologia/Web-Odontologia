@@ -1,19 +1,19 @@
 
-<div class="login-content"> 
+<div class="login-content" ng-controller="signInController as vm"> 
            
                <!-- Login -->
         <div class="lc-block toggled" id="l-login">
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="md md-person"></i></span>
                 <div class="fg-line">
-                    <input type="text" class="form-control" placeholder="Usuario">
+                    <input type="text" ng-model="loginData.username" class="form-control" placeholder="Usuario" required>
                 </div>
             </div>
             
             <div class="input-group m-b-20">
                 <span class="input-group-addon"><i class="md md-accessibility"></i></span>
                 <div class="fg-line">
-                    <input type="password" class="form-control" placeholder="Contraseña">
+                    <input type="password" ng-model="loginData.password" class="form-control" placeholder="Contraseña" required>
                 </div>
             </div>
             
@@ -27,7 +27,7 @@
                 </label>
             </div>
             
-            <a ui-sref="app.main" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></a>
+            <a ng-click="doSign()" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></a>
             
             <ul class="login-navigation">
                 <li ui-sref="register" class="bgm-red">Registrarse</li>
