@@ -4,6 +4,8 @@
 	
 	$scope.Paciente = {};
 
+	var fechaSeleccionada = new Date();
+
 	//Cuando se selecciona un paciente
 	$scope.Paciente = varsFactoryService.pacienteSeleccionado();
 	$scope.Pacientes = new Array();
@@ -15,6 +17,7 @@
 	
 	var usuario = users.getCurrentUser();	
 	//validarNavegacionService.validarCaptcha();
+
 
 	$scope.navegarOdontograma = function(item){
 		$scope.Paciente = item;
@@ -33,6 +36,7 @@
 
 		var data = $scope.Paciente;		
 		data.PartitionKey = usuario.username;
+		data["fecha"] = fechaSeleccionada;
 
 		//Cuando es un nuevo paciente el otro caso es cuando se edita un registro
 		if(angular.isUndefined(data.RowKey)){
@@ -157,6 +161,19 @@ var dataFactory = {};
 dataFactory.getPicture = function(){
 
 }
+
+function inicializarFechas(){
+  var datePicker = $('#datetimepickerFecha').datetimepicker({
+      format: 'DD/MM/YYYY'
+  });
+
+  datePicker.on("dp.change", function(e) {
+	fechaSeleccionada = e.date;	
+  });
+}
+
+
+inicializarFechas();
 
 return dataFactory;
 

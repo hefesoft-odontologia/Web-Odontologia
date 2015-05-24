@@ -40,7 +40,8 @@ angular
         cache: false,
         views: {
             'menuContent': {
-                templateUrl: "/views/pacientes/listado.html"
+                templateUrl: "/views/pacientes/listado.html",
+                controller : 'pacientesController'
             }       
             }
       })
@@ -50,7 +51,8 @@ angular
         cache: false,
         views: {
             'menuContent': {
-                templateUrl: "/views/pacientes/paciente.html"
+                templateUrl: "/views/pacientes/paciente.html",
+                controller: "pacientesController"
             }       
             }
       })
